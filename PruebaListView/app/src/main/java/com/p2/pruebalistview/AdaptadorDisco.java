@@ -40,8 +40,7 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
          * Usamos una instancia para asignar nuestro layout (layout_disco) al elemento, cada vez que se
          * cree uno nuevo.
          */
-        View item = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_disco, parent, false);
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_disco, parent, false);
         return new DiscoViewHolder(item);
     }
 
@@ -97,6 +96,12 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
             this.portadaIW = portadaIW;
         }
 
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            mOnClickListener.clickEnElemento(position);
+        }
+
         // Constructor por defecto, se le pasa una instancia de la clase View
         public DiscoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -105,12 +110,6 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
             this.autorCuadroTexto = itemView.findViewById(R.id.autor);
             this.portadaIW = itemView.findViewById(R.id.portada);
             itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View view) {
-            int position = getAdapterPosition();
-            mOnClickListener.clickEnElemento(position);
         }
     }
 }

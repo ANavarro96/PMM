@@ -9,5 +9,29 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rw"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/crear" />
+
+    <Button
+        android:id="@+id/crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR" />
+
+    <Button
+        android:id="@+id/borrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/crear"
+        android:text="BORRAR" />
+
+    <Button
+        android:id="@+id/modificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/borrar"
+        android:text="MODIFICAR" />
 </RelativeLayout>
