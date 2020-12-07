@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/crear"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="crear"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/modificar"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="modificar"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/borrar"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="borrar"
+        app:showAsAction="ifRoom" />
+
+</menu>
