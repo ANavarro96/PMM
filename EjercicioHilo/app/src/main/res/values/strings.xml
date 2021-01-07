@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EjercicioHilo</string>
+    <string name="cargar_imagen">Cargar imagen</string>
+    <string name="otro_boton">Otro boton</string>
+</resources>
