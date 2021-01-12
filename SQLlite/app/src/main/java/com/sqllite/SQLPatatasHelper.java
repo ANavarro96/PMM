@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLPatatasHelper extends SQLiteOpenHelper {
 
     String crearPatatas = "CREATE TABLE Patatas (id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            " nombre TEXT,precio decimal)";
+            " nombre VARCHAR(20),precio INTEGER)";
 
     String crearSabor = "CREATE TABLE Sabor (id INTEGER PRIMARY KEY AUTOINCREMENT," +
             " nombre TEXT)";

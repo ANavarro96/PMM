@@ -48,18 +48,32 @@ public class MainActivity extends AppCompatActivity {
                     null, // Los parámetros que se aplican en el WHERE (?)
                     null, // Las columnas por las que se hace group By
                     null, // La cláusula HAVING
-                    null); // Las columnas por las que se ordenan 
+                    null); // Las columnas por las que se ordenan
+            /* db.rawQuery("SELECT * FROM PATATAS) */
 
             //Nos aseguramos de que existe al menos un registro
+            // for(c.moveToFirst;!c.afterLast();cur.moveToNext())
+            // Con moveToFirst nos movemos al primer registro
+            // afterLast() nos indica si es el último elemento
+            // moveToNext() nos mueve al siguiente elemento
             lista.setText("");
+            String codigo,nombre;
+            Double precop;
             if (c.moveToFirst()) {
                 //Recorremos el cursor hasta que no haya más registros
+                codigo= c.getString(0);
+                nombre = c.getString(1);
+                precop = c.getDouble(c.getColumnIndex("precio"));
+
+                lista.setText(lista.getText() + codigo + " " + nombre + " " + precop + "\n");
                 while(c.moveToNext()) {
-                    String codigo= c.getString(0);
-                    String nombre = c.getString(1);
-                    Double precop = c.getDouble(c.getColumnIndex("precio"));
+                    codigo= c.getString(0);
+                    nombre = c.getString(1);
+                    precop = c.getDouble(c.getColumnIndex("precio"));
                     lista.setText(lista.getText() + codigo + " " + nombre + " " + precop + "\n");
                 }
+
+
             }
             c.close();
         }
@@ -79,14 +93,29 @@ public class MainActivity extends AppCompatActivity {
 
             //Nos aseguramos de que existe al menos un registro
             lista.setText("");
+
+            // for(c.moveToFirst;!c.afterLast();cur.moveToNext())
+            // Con moveToFirst nos movemos al primer registro
+            // afterLast() nos indica si es el último elemento
+            // moveToNext() nos mueve al siguiente elemento
+
+            String codigo,nombre;
+            Double precop;
             if (c.moveToFirst()) {
                 //Recorremos el cursor hasta que no haya más registros
+                codigo= c.getString(0);
+                nombre = c.getString(1);
+                precop = c.getDouble(c.getColumnIndex("precio"));
+
+                lista.setText(lista.getText() + codigo + " " + nombre + " " + precop + "\n");
                 while(c.moveToNext()) {
-                    String codigo= c.getString(0);
-                    String nombre = c.getString(1);
-                    Double precop = c.getDouble(c.getColumnIndex("precio"));
+                     codigo= c.getString(0);
+                     nombre = c.getString(1);
+                     precop = c.getDouble(c.getColumnIndex("precio"));
                     lista.setText(lista.getText() + codigo + " " + nombre + " " + precop + "\n");
                 }
+
+
             }
             c.close();
         }
@@ -142,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Abrimos la base de datos, en modo escritura
-         sqlhelper = new SQLPatatasHelper(this, "DBPatatas", null, 1);
+        sqlhelper = new SQLPatatasHelper(this, "DBPatatas", null, 1);
         System.out.println(sqlhelper.getDatabaseName());
         db = sqlhelper.getWritableDatabase();
 
@@ -163,10 +192,9 @@ public class MainActivity extends AppCompatActivity {
 
             if(db != null)
             {
-                //usarExecSQL(db);
+                usarExecSQL(db);
 
                 //Cerrríamos la base de datos
-                //db.close();
             }
         }
     };
