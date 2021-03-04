@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/edittex1"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editext2"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@id/edittex1"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@id/editext2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="67dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@id/spinner"
+        android:text="crear" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittex1"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_toRightOf="@id/editTextTextPersonName3"
+        android:text="lt" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_toRightOf="@id/button4"
+        android:text="gt" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_toRightOf="@id/button2"
+        android:text="all" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button4" />
+</RelativeLayout>
