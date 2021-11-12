@@ -1,4 +1,4 @@
-package com.p2.pruebalistview;
+package com.p2.pruebalistview.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,25 +9,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.p2.pruebalistview.R;
+import com.p2.pruebalistview.model.Disco;
+
 import java.util.ArrayList;
 
 public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoViewHolder> {
     private ArrayList<Disco> listaDiscos;
-    public AdaptadorDisco(ArrayList<Disco> listaDiscos, listenersInterfaz mOnClickListener) {
+    private EventsInterface mOnClickListener;
+
+
+    public AdaptadorDisco(ArrayList<Disco> listaDiscos, EventsInterface mOnClickListener) {
         this.listaDiscos = listaDiscos;
         this.mOnClickListener = mOnClickListener;
     }
+
     public ArrayList<Disco> getListaDiscos() {
         return listaDiscos;
     }
     public void setListaDiscos(ArrayList<Disco> listaDiscos) {
         this.listaDiscos = listaDiscos;
     }
-    interface listenersInterfaz {
-        void clickEnElemento(int pos);
-    };
 
-    private listenersInterfaz mOnClickListener;
+
 
     @NonNull
     @Override
@@ -38,7 +42,10 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
          *
          * La clase LayoutInflater nos permite asignar un layout (un xml) en tiempo de ejecución, de forma dinámica.
          * Usamos una instancia para asignar nuestro layout (layout_disco) al elemento, cada vez que se
-         * cree uno nuevo.
+         * cree uno nuevo. NO ES EL LAYOUT DE LA ACTIVIDAD, SI NO EL QUE REPRESENTE CADA ELEMENTO.
+         *
+         * Este método se llamará cada vez que añadamos un elemnto a nuestro array o notifiquemos
+         * de algún cambio.
          */
         View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_disco, parent, false);
         return new DiscoViewHolder(item);
@@ -46,6 +53,12 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
 
     /**
      * Este evento ocurrirá cuando se tenga que actualizar la información de un elemento
+     * La posición del elemento que se tenga que actualizar se pasa como parámetro
+     * de forma automática.
+     *
+     * Normalmente, cuando añadamos un elemento al array, primero se crea el ViewHolder (lo ifnlamos,
+     * y le asociamos el layout) y después se lanza el onBind, donde le asociamos valor a cada uno
+     * de los elementos visuales (cuadros de texto e imágenes).
      *
      */
     @Override
@@ -56,21 +69,22 @@ public class AdaptadorDisco extends RecyclerView.Adapter<AdaptadorDisco.DiscoVie
             holder.getPortadaIW().setImageResource(discoActual.getPortada());
     }
 
+    /* Devuelve el número de elementos de nuestro array */
     @Override
     public int getItemCount() {
         return listaDiscos.size();
     }
 
-     /*
-        La clase DiscoViewHolder es la que representa el layout de cada elemento de la lista.
-        En los ViewHolder declararemos nuestras variables Java que se enlazarán con los
-        controles de la interfaz que hayamos creado. En este ejemplo, layout_disco
-     */
-
+    /*
+           La clase DiscoViewHolder es la que gestiona el layout de cada elemento de la lista.
+           En los ViewHolder declararemos nuestras variables Java que se enlazarán con los
+           controles de la interfaz que hayamos creado. En este ejemplo, layout_disco
+        */
     public class DiscoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView nombreCuadroTexto;
         TextView autorCuadroTexto;
         ImageView portadaIW;
+
 
         public TextView getNombreCuadroTexto() {
             return nombreCuadroTexto;

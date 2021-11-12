@@ -1,5 +1,6 @@
-package com.p2.pruebalistview;
+package com.p2.pruebalistview.model;
 
+/* Clase que representa nuestro modelo, el objeto Java que vamos a representar en la lista */
 public class Disco {
     private String nombre;
     private String autor;
@@ -26,8 +27,6 @@ public class Disco {
     public void setPortada(int portada) {
         this.portada = portada;
     }
-
-
 
     public String getNombre() {
         return nombre;

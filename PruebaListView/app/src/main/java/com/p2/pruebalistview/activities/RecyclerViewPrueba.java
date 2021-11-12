@@ -1,4 +1,4 @@
-package com.p2.pruebalistview;
+package com.p2.pruebalistview.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -9,6 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.p2.pruebalistview.R;
+import com.p2.pruebalistview.adapters.AdaptadorDisco;
+import com.p2.pruebalistview.adapters.EventsInterface;
+import com.p2.pruebalistview.model.Disco;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,7 +29,7 @@ public class RecyclerViewPrueba extends AppCompatActivity {
      * un elemento de la lista, que será mostrar el TOAST.
      *
      */
-    private AdaptadorDisco.listenersInterfaz funcion = new AdaptadorDisco.listenersInterfaz() {
+    private EventsInterface funcion = new EventsInterface() {
         @Override
         public void clickEnElemento(int pos) {
             Toast.makeText(getApplicationContext(), listaDiscos.get(pos).getNombre(), Toast.LENGTH_SHORT).show();
@@ -41,11 +46,14 @@ public class RecyclerViewPrueba extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            listaDiscos.add(0,new Disco("Disco Creado","autor inventado",R.drawable.tgg));
+            listaDiscos.add(0,new Disco("Disco Creado","autor inventado", R.drawable.tgg));
             adaptadorDisco.notifyItemInserted(0);
         }
     };
 
+    /* Para modificar un elemento de la lista, modifico su valor en el array, y llamo al método de
+        notifyItemChanged
+     */
     private View.OnClickListener funcionMod = new View.OnClickListener() {
 
         @Override
@@ -59,6 +67,7 @@ public class RecyclerViewPrueba extends AppCompatActivity {
 
     /*
      * Borro el elemento que está al PRINCIPIO de la lista, es decir, el elemento 0.
+     * Y notifico al adaptador
      *
      */
     private View.OnClickListener funcionBorrar = new View.OnClickListener() {
@@ -86,7 +95,7 @@ public class RecyclerViewPrueba extends AppCompatActivity {
         borrar.setOnClickListener(funcionBorrar);
         modificar.setOnClickListener(funcionMod);
         // Creamos una lista de valores inventadas
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             listaDiscos.add(new Disco("The Greatest Generation", "The Wonder Years", R.drawable.tgg));
             listaDiscos.add(new Disco("Suburbia", "The Wonder Years", R.drawable.suburbia));
             listaDiscos.add(new Disco("Sister cities", "The Wonder Years", R.drawable.sc));
@@ -96,7 +105,9 @@ public class RecyclerViewPrueba extends AppCompatActivity {
         // Creamos nuestro adaptador personalizado, y le pasamos la lista de Disco
         adaptadorDisco = new AdaptadorDisco(listaDiscos,funcion);
 
-        recyclerView.setHasFixedSize(true);
+        // Este método especifica si un RW tiene un número de datos estático,
+        // es decir, que no variarán.
+        //recyclerView.setHasFixedSize(true);
 
         // Con esto especificamos que nuestra lista se va a ver en vertical.
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
