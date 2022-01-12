@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.list.DialogMultiChoiceExtKt;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "130688866423",
+    "project_id": "proyecto-patatas",
+    "storage_bucket": "proyecto-patatas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130688866423:android:f49802b67d3074d806ce72",
+        "android_client_info": {
+          "package_name": "alejandro.patatas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130688866423-k66p3bh3s547vlqv438kmebk80v18e7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6VfEscYrLgM2bkcu1_wrSWpEOQAy7oUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130688866423-k66p3bh3s547vlqv438kmebk80v18e7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

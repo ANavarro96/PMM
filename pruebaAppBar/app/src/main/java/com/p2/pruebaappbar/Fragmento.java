@@ -66,11 +66,6 @@ public class Fragmento extends Fragment {
         super(contentLayoutId);
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // la interfaz
-    }
 
     public void updateRecyclerView(ArrayList<Disco> listaDiscos){
         this.listaDiscos = listaDiscos;

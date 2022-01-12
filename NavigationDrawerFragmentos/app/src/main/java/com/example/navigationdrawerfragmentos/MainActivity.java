@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
+    FragmentManager fragmentManager = getSupportFragmentManager();
 
 
     private NavigationView.OnNavigationItemSelectedListener handlerND = new NavigationView.OnNavigationItemSelectedListener() {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 f = new Fragmento(imagenPintar);
             }
             // Creamos nuestro fragmento (porción de interfaz)
-            FragmentManager fragmentManager = getSupportFragmentManager();
+
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmento_container, f);
             fragmentTransaction.addToBackStack(null);
