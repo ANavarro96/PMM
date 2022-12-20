@@ -9,6 +9,7 @@
 
     <Button
         android:id="@+id/botonInput"
+        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
@@ -16,6 +17,17 @@
         app:layout_constraintBottom_toTopOf="@+id/botonChips"
         app:layout_constraintEnd_toEndOf="@+id/botonChips"
         app:layout_constraintStart_toStartOf="@+id/botonChips" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -84,8 +96,10 @@
 
     <Button
         android:id="@+id/botonChips"
+        style="@style/ThemeOverlay.Material3.Button.ElevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="40dp"
         android:text="Activar/desactivar CHIPS"
         app:layout_constraintBottom_toBottomOf="@+id/fab"
         app:layout_constraintEnd_toStartOf="@+id/fab"
