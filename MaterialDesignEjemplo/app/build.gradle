@@ -1,9 +1,10 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
 }
 
 android {
-    compileSdk 313
+    compileSdk 31
     defaultConfig {
         applicationId "com.example.materialdesignejemplo"
         minSdk 21

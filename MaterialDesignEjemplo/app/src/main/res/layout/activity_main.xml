@@ -45,15 +45,19 @@
         android:id="@+id/textField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:hint="Introduce tu nombre"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopStart="50dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
         app:endIconDrawable="@android:drawable/btn_dialog"
         app:endIconMode="clear_text"
+        app:errorContentDescription="No puedes introducit 'Hitler'"
+        app:errorEnabled="true"
+        app:errorIconTintMode="screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
         app:startIconDrawable="@android:drawable/btn_star_big_on"
         app:startIconTint="#FF9800">
 
@@ -120,7 +124,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="elige un luchador"
-            android:inputType="none" />
+            android:inputType="none"
+            android:popupBackground="@drawable/the_stone" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
