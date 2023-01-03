@@ -9,12 +9,6 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/modificar"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="modificar"
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/borrar"
         android:icon="@android:drawable/ic_menu_delete"
         android:title="borrar"
