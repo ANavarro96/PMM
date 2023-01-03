@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/rock"
+        android:icon="@drawable/ic_baseline_format_bold_24"
+        android:title="la roca"/>
+    <item
+        android:id="@+id/fino"
+        android:icon="@drawable/ic_baseline_thumb_up_24"
+        android:title="fino" />
+    <item
+        android:id="@+id/scooby"
+        android:icon="@drawable/ic_baseline_tag_faces_24"
+        android:title="scooby" />
+</menu>
